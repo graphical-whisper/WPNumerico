@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home Page</title>
+  <link rel="stylesheet" href="styles/styles.css">
+</head>
+<body>
+  <!-- Navbar -->
+  <header>
+    <nav>
+      <div class="logo">WPAnálisisNumérico</div>
+      <ul class="nav-links">
+        <li><a href="#">Inicio</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <h1>Portal de Videojuegos de Análisis Numérico</h1>
+    <p>A continuación podrás apreciar los videojuegos realizados este 2025 semestre 1 por los estudiantes de la asignatura de análisis numérico, <br> toca en cada uno de ellos para más detalles y para poder jugarlos</p>
+  </section>
+
+  <!-- Content Section -->
+  <section class="content">
+    <div class="card" data-id="1">
+      <img src="assets/images/image1.jpg" alt="Image 1">
+      <h3>Title 1</h3>
+    </div>
+    <div class="card" data-id="2">
+      <img src="assets/images/image2.jpg" alt="Image 2">
+      <h3>Title 2</h3>
+    </div>
+    <div class="card" data-id="3">
+      <img src="assets/images/image3.jpg" alt="Image 3">
+      <h3>Title 3</h3>
+    </div>
+    <div class="card" data-id="4">
+      <img src="assets/images/image4.jpg" alt="Image 4">
+      <h3>Title 4</h3>
+    </div>
+  </section>
+
+  <!-- Full-Page Popup -->
+  <div class="popup" id="popup">
+    <div class="popup-content">
+      <span class="close-btn" id="close-btn">&times;</span>
+      <img id="popup-img" src="" alt="Popup Image">
+      <h2 id="popup-title"></h2>
+      <p id="popup-description"></p>
+      <a id="play-btn" href="#" target="_blank" class="play-btn">Play</a>
+    </div>
+  </div>
+
+  <script src="scripts/script.js"></script>
+</body>
+</html>
