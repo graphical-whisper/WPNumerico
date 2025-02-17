@@ -9,10 +9,10 @@ const closeBtn = document.getElementById('close-btn');
 
 // Descriptions for each card
 const descriptions = {
-  1: "This is the description for item 1.",
-  2: "This is the description for item 2.",
-  3: "This is the description for item 3.",
-  4: "This is the description for item 4.",
+  1: "Acá irá la descripción del juego 1.",
+  2: "Acá irá la descripción del juego 2.",
+  3: "Acá irá la descripción del juego 3.",
+  4: "Acá irá la descripción del juego 4.",
 };
 
 // Add click event to cards
@@ -27,7 +27,7 @@ cards.forEach((card) => {
     popupImg.src = imgSrc;
     popupTitle.textContent = title;
     popupDescription.textContent = description;
-    playBtn.href = `https://example.com/play/${id}`; // Replace with your external link
+    playBtn.href = `https://webpageanalisisnumerico/play/${id}/netlify.app`;
 
     // Show popup
     popup.style.display = 'flex';
