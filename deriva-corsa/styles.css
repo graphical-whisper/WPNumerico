@@ -1,7 +1,6 @@
 body {
     background: #111;
     font-family: "Lato", "Lucida Grande","Lucida Sans Unicode", Tahoma, Sans-Serif;
-    user-select: none;
     min-width: 420px;
     margin: 0px;
   }
@@ -202,4 +201,54 @@ body {
   }
   #velocity-panel div {
     font-size: 16px;
+  }
+  /* Navbar */
+  header {
+    background: #333;
+    color: #fff;
+    padding: 1rem 0;
+  }
+  
+  nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+  }
+  
+  .logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+  
+  .nav-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+  }
+  
+  .nav-links li {
+    margin-left: 20px;
+  }
+  
+  .nav-links a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1rem;
+  }
+  .logo-link {
+    color: inherit;
+    text-decoration: none;
+  }
+  
+  .nav-link {
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+  
+  .nav-link:hover {
+    color: #00ff88; /* Color de tu tema */
   }
