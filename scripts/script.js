@@ -10,7 +10,7 @@ const closeBtn = document.getElementById('close-btn');
 // Descriptions for each card
 const descriptions = {
   1: "Se juega utilizando las teclas de adelante, izquierda, derecha del teclado. Con la tecla adelante se desplaza, con la izquierda y derecha se mueve el vehículo a los lados. La intención es superar los carros en medio de los distintos entornos.",
-  2: "Acá irá la descripción del juego 2.",
+  2: "Se juega utilizando las teclas de adelante, izquierda, derecha del teclado. Con la tecla adelante se desplaza, con la izquierda y derecha se mueve el vehículo a los lados. La intención es superar los carros en medio de los distintos entornos.",
   3: "Acá irá la descripción del juego 3.",
   4: "Acá irá la descripción del juego 4.",
   5: "Acá irá la descripción del juego 5.",
