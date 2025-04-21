@@ -5,6 +5,6 @@
   force = false
 
 [[redirects]]
-  from = "/deriva-corsa"
-  to = "/deriva-corsa/"
-  status = 301
+  from = "/deriva-corsa/*"
+  to = "/deriva-corsa/index.html"
+  status = 200
