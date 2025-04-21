@@ -13,23 +13,23 @@ const descriptions = {
   2: "Acá irá la descripción del juego 2.",
   3: "Acá irá la descripción del juego 3.",
   4: "Acá irá la descripción del juego 4.",
+  5: "Acá irá la descripción del juego 5.",
 };
 
-// Add click event to cards
+
 cards.forEach((card) => {
   card.addEventListener('click', () => {
     const imgSrc = card.querySelector('img').src;
     const title = card.querySelector('h3').textContent;
     const id = card.dataset.id;
+    const folderName = card.dataset.folder; // Nuevo atributo
     const description = descriptions[id];
-
-    // Update popup content
+  
     popupImg.src = imgSrc;
     popupTitle.textContent = title;
     popupDescription.textContent = description;
-    playBtn.href = `https://webpageanalisisnumerico/play/${id}/netlify.app`;
-
-    // Show popup
+    playBtn.href = `https://webpageanalisisnumerico.netlify.app/${folderName}/`;
+    
     popup.style.display = 'flex';
   });
 });
