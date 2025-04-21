@@ -17,6 +17,7 @@ const descriptions = {
 };
 
 
+// Modifica la sección del evento click
 cards.forEach((card) => {
   card.addEventListener('click', () => {
     const imgSrc = card.querySelector('img').src;
@@ -24,7 +25,8 @@ cards.forEach((card) => {
     const id = card.dataset.id;
     const folderName = card.dataset.folder; // Nuevo atributo
     const description = descriptions[id];
-  
+
+    // Actualiza el enlace del botón Play
     popupImg.src = imgSrc;
     popupTitle.textContent = title;
     popupDescription.textContent = description;
