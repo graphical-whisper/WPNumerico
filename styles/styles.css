@@ -190,3 +190,32 @@ body {
       grid-template-columns: 1fr;
     }
   }
+  /* Votación */
+  .voting-section {
+    margin-top: 20px;
+    border-top: 1px solid #ccc;
+    padding-top: 15px;
+  }
+  
+  /* Agregar en styles.css */
+#vote-btn {
+  background: #4CAF50;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  margin-top: 15px;
+  cursor: pointer;
+}
+
+#vote-btn:disabled {
+  background: #cccccc;
+  cursor: not-allowed;
+}
+
+.vote-message {
+  color: #666;
+  font-size: 0.9em;
+  margin-top: 10px;
+  min-height: 20px;
+}
