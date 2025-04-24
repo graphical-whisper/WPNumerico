@@ -27,23 +27,40 @@ const descriptions = {
   5: "Acá irá la descripción del juego 5.",
 };
 
-// Función para registrar votos
+function getVoterKey() {
+  let key = localStorage.getItem('voterKey');
+  if (!key) {
+    // Usa el API nativo para generar un UUID
+    key = crypto.randomUUID();
+    localStorage.setItem('voterKey', key);
+  }
+  return key;
+}
+
+
 async function registerVote(gameId) {
   try {
-    // Simular envío a servidor (reemplazar con tu endpoint real)
-    const fakeAPI = await new Promise(resolve => 
-      setTimeout(() => resolve({ status: 200 }), 500)
-    );
+    const voterKey = getVoterKey();
+    const res = await fetch('/.netlify/functions/vote', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ gameId, voterKey })
+    });
 
-    if (fakeAPI.status === 200) {
+    if (res.status === 200) {
+      // El voto se registró correctamente
       localStorage.setItem(`voted-${gameId}`, 'true');
       return true;
     }
-  } catch (error) {
-    console.error('Error voting:', error);
+    // En caso de 409 u otro código
+    console.warn('Respuesta inesperada al votar:', res.status);
+    return false;
+  } catch (err) {
+    console.error('Error en registerVote:', err);
     return false;
   }
 }
+
 
 cards.forEach((card) => {
   card.addEventListener('click', () => {
