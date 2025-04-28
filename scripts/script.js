@@ -6,7 +6,7 @@ const popupTitle = document.getElementById('popup-title');
 const popupDescription = document.getElementById('popup-description');
 const playBtn = document.getElementById('play-btn');
 const closeBtn = document.getElementById('close-btn');
-
+/*
 // Elementos de votación dinámicos
 const voteBtn = document.createElement('button');
 voteBtn.id = 'vote-btn';
@@ -17,7 +17,7 @@ voteMessage.className = 'vote-message';
 // Añadir elementos al popup
 document.querySelector('.popup-content').appendChild(voteBtn);
 document.querySelector('.popup-content').appendChild(voteMessage);
-
+*/
 // Descriptions for each card
 const descriptions = {
   1: "Se juega utilizando las teclas de adelante, izquierda, derecha del teclado. Con la tecla adelante se desplaza, con la izquierda y derecha se mueve el vehículo a los lados. La intención es superar los carros en medio de los distintos entornos.",
@@ -37,7 +37,7 @@ function getVoterKey() {
   return key;
 }
 
-
+/*
 async function registerVote(gameId) {
   try {
     const voterKey = getVoterKey();
@@ -60,7 +60,7 @@ async function registerVote(gameId) {
     return false;
   }
 }
-
+*/
 
 cards.forEach((card) => {
   card.addEventListener('click', () => {
@@ -75,7 +75,7 @@ cards.forEach((card) => {
     popupTitle.textContent = title;
     popupDescription.textContent = description;
     playBtn.href = `https://webpageanalisisnumerico.netlify.app/${folderName}/`;
-
+/*
     // Configurar sistema de votación
     const hasVoted = localStorage.getItem(`voted-${id}`);
     voteBtn.disabled = hasVoted;
@@ -94,7 +94,7 @@ cards.forEach((card) => {
         voteBtn.disabled = false;
       }
     };
-
+*/
     popup.style.display = 'flex';
   });
 });
