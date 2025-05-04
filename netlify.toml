@@ -8,3 +8,8 @@
   from = "/deriva-corsa/*"
   to = "/deriva-corsa/index.html"
   status = 200
+
+[[redirects]]
+  from = "/numerical-fly*"
+  to = "/numerical-fly"
+  status = 200
