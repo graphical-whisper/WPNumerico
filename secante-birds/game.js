@@ -2,7 +2,7 @@
 const SCREEN_WIDTH = 1200
 const SCREEN_HEIGHT = 700
 const FPS = 60
-const MAX_POWER = 100
+const MAX_POWER = 50
 
 // Colores
 const WHITE = "#FFFFFF"
@@ -16,8 +16,8 @@ const SKY_BLUE = "#87CEEB"
 const GRAY = "#808080"
 
 // Ajustes físicos
-const VELOCITY_MULTIPLIER = 2.5 // Aumentado de 1.0 a 2.5
-const GRAVITY = 12.0
+const VELOCITY_MULTIPLIER = 4 // Aumentado de 1.0 a 2.5
+const GRAVITY = 25.0
 
 // Estados del juego
 const GameState = {
