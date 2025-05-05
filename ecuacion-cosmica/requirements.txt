@@ -1,0 +1,10 @@
+pip install windows-curses
+
+.\.venv\Scripts\Activate.ps1   # PowerShell
+# ó
+source .venv/bin/activate      # bash/zsh
+
+python game_console.py
+
+curl -O https://cdn.jsdelivr.net/npm/pyscript@0.5.1/dist/pyscript.js
+curl -O https://cdn.jsdelivr.net/npm/pyscript@0.5.1/dist/pyscript.css
