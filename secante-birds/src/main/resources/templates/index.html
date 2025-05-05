@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Secante Birds</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            font-family: Arial, sans-serif;
+            background-color: #87CEEB;
+            overflow: hidden;
+        }
+        
+        h1 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+        
+        p {
+            margin-bottom: 1.5rem;
+            text-align: center;
+            max-width: 600px;
+        }
+        
+        canvas {
+            border: 2px solid #333;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            max-width: 100%;
+            height: auto;
+            background-color: #87CEEB;
+        }
+        
+        .instructions {
+            margin-top: 1rem;
+            font-size: 0.9rem;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>Secante Birds</h1>
+    <p>Un juego que utiliza el método de la secante para calcular trayectorias óptimas.</p>
+    
+    <canvas id="gameCanvas" width="1200" height="700"></canvas>
+    
+    <div class="instructions">
+        <p>Arrastra el mouse para apuntar y suelta para lanzar.</p>
+        <p>Presiona M para cambiar entre apuntado manual y automático (método de la secante).</p>
+        <p>Presiona R para reiniciar el nivel actual.</p>
+    </div>
+
+    <script src="/js/game.js"></script>
+</body>
+</html>
