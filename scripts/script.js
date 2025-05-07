@@ -7,40 +7,57 @@ const popupDescription = document.getElementById('popup-description');
 const playBtn = document.getElementById('play-btn');
 const closeBtn = document.getElementById('close-btn');
 
-// Descriptions for each card
+// Modifica el objeto descriptions en tu script.js
 const descriptions = {
-  1: "El jugador tiene visitar planetas para evaluar el terreno y las condiciones del ambiente en cada planeta y poder definir si es apto para ser habitable o por el  contrario no tiene las condiciones para ser habitado, el jugador se puede mover con las letras A y D, T para terraformar y Q para salir.",
-  2: "Se juega utilizando las teclas de adelante, izquierda, derecha del teclado. Con la tecla adelante se desplaza, con la izquierda y derecha se mueve el vehículo a los lados. La intención es superar los carros en medio de los distintos entornos.",
-  3: "El jugador debe lanzar un proyectil (un pájaro) para impactar un objetivo. Se puede apuntar de dos formas:\nModo Manual: arrastrando el mouse estilo Angry Birds.\nModo Automático: el juego calcula el ángulo óptimo usando el método de la secante.\nEl jugador ajusta la fuerza arrastrando el mouse hacia atrás.\nSi el pájaro impacta el objetivo, se avanza al siguiente nivel.\nHay niveles con objetivos móviles y obstáculos que se deben evitar.",
-  4: "El jugador controla un pájaro que debe pasar entre tuberías en movimiento sin chocar. Cada vez que pasa entre dos tuberías gana un punto. El reto es sobrevivir controlando el vuelo contra la gravedad. El juego termina si el pájaro choca con una tubería o el suelo. El objetivo es conseguir la mayor cantidad de puntos posible.",
-  5: "Este es un marcador de posición para la descripción del juego 5. Asegúrate de actualizarlo con detalles del juego.",
+  1: {
+      howToPlay: "El jugador debe visitar planetas para evaluar el terreno y las condiciones del ambiente. Controles: A y D para moverse, T para terraformar, Q para salir.",
+      method: "Método de Newton-Raphson",
+      implementation: `Cuando el jugador terraforma (T), el juego itera la función F y su derivada F' usando la posición actual. Si |F(x)| < 10⁻⁷, se encuentra la raíz permitiendo la terraformación. Fórmula: 
+      xₙ₊₁ = xₙ - F(xₙ)/F'(xₙ)`
+  },
+  2: {
+      howToPlay: "Controles: teclas de dirección (↑ para acelerar, ← → para mover). Objetivo: esquivar vehículos en diferentes entornos manteniendo alta velocidad.",
+      method: "Derivada Regresiva",
+      implementation: `Cálculo en tiempo real de velocidad (v = Δx/Δt) y aceleración (a = Δv/Δt) usando diferencias hacia atrás. Actualiza cada frame:
+      aₜ = (vₜ - vₜ₋₁)/Δt
+      vₜ = (xₜ - xₜ₋₁)/Δt`
+  },
+  3: {
+      howToPlay: "Lanzar pájaro con: Click y arrastre (modo manual) o cálculo automático con método numérico. Objetivo: impactar blancos móviles.",
+      method: "Método de la Secante",
+      implementation: `Resuelve θ en la ecuación de trayectoria:
+      f(θ) = x tanθ - (gx²)/(2v²cos²θ) - y = 0
+      Iteración: θₙ₊₁ = θₙ - f(θₙ)(θₙ - θₙ₋₁)/(f(θₙ) - f(θₙ₋₁))`
+  },
+  4: {
+      howToPlay: "Controles: click/espacio para impulsar al pájaro. Esquivar tuberías y ganar puntos pasando entre ellas.",
+      method: "Interpolación de Euler",
+      implementation: `Actualización de posición y velocidad cada frame:
+      vₜ₊₁ = vₜ + gΔt + impulso
+      yₜ₊₁ = yₜ + vₜΔt
+      donde g = 9.8 m/s² y Δt = tiempo entre frames`
+  }
 };
 
-function getVoterKey() {
-  let key = localStorage.getItem('voterKey');
-  if (!key) {
-    // Usa el API nativo para generar un UUID
-    key = crypto.randomUUID();
-    localStorage.setItem('voterKey', key);
-  }
-  return key;
-}
-
+// Actualiza el manejador de clics de las tarjetas
+// Modifica el manejador de clics de las tarjetas
 cards.forEach((card) => {
   card.addEventListener('click', () => {
-    const imgSrc = card.querySelector('img').src;
-    const title = card.querySelector('h3').textContent;
-    const id = card.dataset.id;
-    const folderName = card.dataset.folder;
-    const description = descriptions[id];
+      const imgSrc = card.querySelector('img').src; // Obtener src de la imagen de la tarjeta
+      const title = card.querySelector('h3').textContent;
+      const id = card.dataset.id;
+      const folderName = card.dataset.folder;
+      const gameInfo = descriptions[id];
 
-    // Actualizar contenido del popup
-    popupImg.src = imgSrc;
-    popupTitle.textContent = title;
-    popupDescription.textContent = description;
-    playBtn.href = `https://webpageanalisisnumerico.netlify.app/${folderName}/`;
+      // Actualizar contenido del popup
+      popupImg.src = imgSrc; // Usar la misma imagen de la tarjeta
+      popupTitle.textContent = title;
+      document.getElementById('popup-howtoplay').textContent = gameInfo.howToPlay;
+      document.getElementById('popup-method').textContent = gameInfo.method;
+      document.getElementById('popup-implementation').textContent = gameInfo.implementation;
+      playBtn.href = `https://webpageanalisisnumerico.netlify.app/${folderName}/`;
 
-    popup.style.display = 'flex';
+      popup.style.display = 'flex';
   });
 });
 

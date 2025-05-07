@@ -46,15 +46,36 @@
     </div>
 </section>
 
-  <!-- Full-Page Popup -->
-  <div class="popup" id="popup">
-    <div class="popup-content">
+  <!-- Asegura que el popup tenga esta estructura -->
+<div class="popup" id="popup">
+  <div class="popup-content">
       <span class="close-btn" id="close-btn">&times;</span>
-      <img id="popup-img" src="" alt="Popup Image">
+      <img id="popup-img" src="" alt="Imagen del juego">
       <h2 id="popup-title"></h2>
-      <p id="popup-description"></p>
-      <a id="play-btn" href="#" target="_blank" class="play-btn">Jugar</a>
-        </div>
+      
+      <div class="game-info-grid">
+          <!-- Sección Cómo jugar -->
+          <div class="method-section">
+              <h3>🏁 ¿Cómo jugar?</h3>
+              <p id="popup-howtoplay" class="game-instruction"></p>
+          </div>
+          
+          <!-- Sección Método Numérico -->
+          <div class="method-section">
+              <h3>🧮 Método Numérico</h3>
+              <p id="popup-method" class="method-name"></p>
+          </div>
+          
+          <!-- Sección Implementación -->
+          <div class="method-section">
+              <h3>⚙️ Implementación</h3>
+              <p id="popup-implementation" class="method-details"></p>
+          </div>
+      </div>
+      
+      <a id="play-btn" href="#" target="_blank" class="play-btn">🚀 Jugar</a>
+  </div>
+</div>
   <script src="scripts/script.js"></script>
 </body>
 </html>
